@@ -19,10 +19,11 @@
   },
   "scripts": {
     "clean": "cross-env ./node_modules/.bin/rimraf dist",
-    "build": "cross-env npm run clean && npm run build:server && npm run build:admin",
-    "build:server": "cross-env npm run clean && tsc -p tsconfig.json",
+    "watch": "cross-env tsc --watch",
     "test": "cross-env jest",
     "dev": "cross-env npm run build:server && medusa develop",
+    "build": "cross-env npm run clean && npm run build:server",
+    "build:server": "cross-env npm run clean && tsc -p tsconfig.json",
     "prepare": "cross-env NODE_ENV=production npm run build:server"
   },
   "dependencies": {
