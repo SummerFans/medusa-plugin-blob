@@ -18,11 +18,11 @@ class BlobFileService extends AbstractFileService {
     constructor(container, options: any) {
         super(container, options)
 
-        if (!options.auth) {
+        if (!options.token) {
             throw new Error("Missing authentication options.")
         }
 
-        this.blobClient = new VercelBlob(options.auth)
+        this.blobClient = new VercelBlob(options.token)
     }
 
 
